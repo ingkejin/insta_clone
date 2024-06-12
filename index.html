@@ -7,31 +7,31 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="wrpper">
+  <div class="wrapper">
     <div class="form-container">
       <div class="box input-box">
         <h1 class="logo">
-          <a href="">
+          <a class="light-logo" href="">
             <img src="./assets/images/logo-light.png" alt="insta-logo-light">
           </a>
-          <a href="">
+          <a class="dark-logo" href="">
             <img src="./assets/images/logo-dark.png" alt="insta-logo-dark">
           </a>
         </h1>
 
-        <form id="login-form" action="">
+        <form id="login-form" class="login-form" action="">
           <div id="userid" class="animate-input">
             <input type="text">
             <span>전화번호 사용자 이름 또는 이메일</span>
           </div>
 
-          <div id="userpw" class="animate-input">
+          <div id="userpw" class="animate-input userpw">
             <input type="password">
             <span>비밀번호</span>
             <button type="button">비밀번호 표시</button>
           </div>
 
-          <button id="submit-btn" type="submit" disabled>로그인</button>
+          <button id="submit-btn" class="btn-blue" type="submit" disabled>로그인</button>
         </form>
 
         <div class="or-box">
@@ -57,7 +57,7 @@
         </p>
       </div>
 
-      <p>앱을 다운로드하세요.</p>
+      <p class="app-txt">앱을 다운로드하세요.</p>
 
       <div class="app-down">
         <a href="">
@@ -83,7 +83,8 @@
         <li><a href="">인기 계정</a></li>
         <li><a href="">Darkmode</a></li>
       </ul>
-      <p>© 2024 Instagram from Meta</p>
+
+      <p class="copyright">© 2024 Instagram from Meta</p>
     </footer>
   </div>
 
