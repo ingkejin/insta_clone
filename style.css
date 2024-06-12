@@ -56,6 +56,14 @@ button {
   display: none;
 }
 
+body.dark .dark-logo {
+  display: block;
+}
+
+body.dark .light-logo {
+  display: none;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -143,6 +151,10 @@ button {
   cursor: pointer;
 }
 
+body.dark .userpw button {
+  color: #fff;
+}
+
 .animate-input.active button {
   display: inline;
 }
@@ -195,6 +207,10 @@ button[type="submit"]:disabled {
   margin-top: 22px;
   font-size: 12px;
   color: var(--dark-blue);
+}
+
+body.dark .forgot-pw {
+  color: #fff;
 }
 
 .join-box {
