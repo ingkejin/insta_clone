@@ -97,10 +97,6 @@ button {
   object-fit: contain;
 }
 
-img {
-  width: 50px;
-}
-
 .login-form {
   margin-top: 40px;
 }
@@ -199,4 +195,44 @@ button[type="submit"]:disabled {
   margin-top: 22px;
   font-size: 12px;
   color: var(--dark-blue);
+}
+
+.join-box {
+  margin-top: 12px;
+  padding: 16px 0;
+}
+
+.join-box span {
+  color: var(--light-blue);
+  font-weight: 700;
+}
+
+.app-txt {
+  margin: 30px 0;
+}
+
+.app-down img {
+  width: 136px;
+  height: 40px;
+  object-fit: contain;
+}
+
+footer {
+  text-align: center;
+}
+
+.footer-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-menu-list a {
+  padding: 0 8px;
+  font-size: 14px;
+  color: var(--txt-second-color);
+}
+
+.copyright {
+  margin: 30px 0;
+  color: var(--txt-second-color);
 }
