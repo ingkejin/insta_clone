@@ -4,17 +4,21 @@
   --box-border-color: #dbdbdb;
   --txt-color: #262626;
   --txt-second-color: #8e8e8e;
-  --btn-bg: #0095f6;
-  --btn-color: #fff;
+  --light-blue: #0095f6;
+  --dark-blue: #00376b;
   --fb-color: #385185;
-  --a-color: #00376b;
 }
 
 .dark {
   --body-bg: #151515;
   --box-bg: #353535;
-  --box-border-color: #262626;
+  --box-border-color: #666565;
   --txt-color: #d2d2d2;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--txt-color);
 }
 
 * {
@@ -65,6 +69,7 @@ button {
   border: 1px solid var(--box-border-color);
   border-radius: 4px;
   text-align: center;
+  background-color: var(--box-bg);
 }
 
 .input-box {
@@ -93,6 +98,7 @@ img {
 .animate-input {
   position: relative;
   height: 36px;
+  margin: 6px 0;
   padding: 0 8px;
   border: 1px solid var(--box-border-color);
   border-radius: 4px;
