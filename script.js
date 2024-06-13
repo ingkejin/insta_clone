@@ -47,3 +47,24 @@ function handleInput(e) {
 userId.addEventListener('keyup', handleInput);
 userPw.addEventListener('keyup', handleInput);
 
+
+let pwVisible = document.getElementById('pw-visible');
+
+function pwMode() {
+  // userpw의 type이 password일 경우
+  if(userPw.getAttribute('type') == 'password') {
+    // 변경대상.setAttribute(어떤속성을, 어떤걸로)
+    // 1. 비밀번호 표시 클릭 => userpw (input) type => text로 변경
+    userPw.setAttribute('type', 'text');
+    // 2. pwVisible.innerHTML => '숨기기' 로 변경
+    pwVisible.innerHTML = '숨기기';
+  } else {
+    // userpw의 type이 text일 경우
+    // 1. 숨기기 => userpw type => password
+    userPw.setAttribute('type', 'password');
+    // 2. pwVisible.innerHTML => '비밀번호 표시' 로 변경
+    pwVisible.innerHTML = '비밀번호 표시';
+  }
+}
+
+pwVisible.addEventListener('click', pwMode)
