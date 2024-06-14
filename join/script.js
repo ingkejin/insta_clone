@@ -8,6 +8,7 @@ let userName = document.getElementById('user-name');
 let userId = document.getElementById('user-id');
 let userPw = document.getElementById('user-pw');
 
+let pwBtn = document.getElementById('pw-btn');
 
 function updateInputState(val, activeVar) {
   if(val.value.trim().length > 0) {
@@ -49,3 +50,14 @@ animateInput.forEach((item) => {
     }
   })
 })
+
+
+function modeToggle() {
+  // 삼항연산자
+  // 조건 ? true : false
+
+  // userPw type : password => text | pwBtn.innerHTML = '숨기기'
+  // userPw type : text => password | pwBtn.innerHTML = '비밀번호 표시'
+
+}
+pwBtn.addEventListener('click', modeToggle);
