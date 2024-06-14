@@ -55,9 +55,11 @@ animateInput.forEach((item) => {
 function modeToggle() {
   // 삼항연산자
   // 조건 ? true : false
-
+  let pwType = userPw.getAttribute('type') == 'password';
   // userPw type : password => text | pwBtn.innerHTML = '숨기기'
+  userPw.setAttribute('type', pwType ? 'text' : 'password');
   // userPw type : text => password | pwBtn.innerHTML = '비밀번호 표시'
-
+  pwBtn.innerHTML = pwType ? '숨기기' : '비밀번호 표시';
 }
+
 pwBtn.addEventListener('click', modeToggle);
