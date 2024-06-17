@@ -2,36 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인 • Instagram</title>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./color.css">
+  <link rel="stylesheet" href="./common.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="wrapper">
     <div class="form-container">
-      <div class="box input-box">
+      <div class="box login-box">
         <h1 class="logo">
-          <a class="light-logo" href="">
-            <img src="./assets/images/logo-light.png" alt="insta-logo-light">
-          </a>
-          <a class="dark-logo" href="">
-            <img src="./assets/images/logo-dark.png" alt="insta-logo-dark">
-          </a>
+          <img class="logo-light" src="./assets/imgaes/logo-light.png" alt="instagram light-logo" >
+          <img class="logo-dark" src="./assets/imgaes/logo-dark.png" alt="instagram dark-logo" >
         </h1>
 
-        <form id="login-form" class="login-form" action="">
+        <form id="login-form" action="./main/index.html" method="GET">
           <div class="animate-input">
+            <span>전화번호, 사용자 이름 또는 이메일</span>
             <input id="userid" type="text">
-            <span>전화번호 사용자 이름 또는 이메일</span>
           </div>
 
-          <div class="animate-input userpw">
-            <input id="userpw" type="password">
+          <div class="animate-input">
             <span>비밀번호</span>
-            <button id="pw-visible" type="button">비밀번호 표시</button>
+            <input id="userpw" type="password">
+            <button id="pw-btn" type="button">비밀번호 표시</button>
           </div>
 
-          <button id="submit-btn" class="btn-blue" type="submit" disabled>로그인</button>
+          <button type="submit" class="btn-blue" id="login-btn" disabled>로그인</button>
         </form>
 
         <div class="or-box">
@@ -39,39 +45,37 @@
           <div>또는</div>
           <div></div>
         </div>
-
+          
         <div class="fb-btn">
-          <a href="">
-            <img src="./assets/images/facebook-icon.png" alt="facebook-icon">
-            <span>Facebook으로 로그인</span>
-          </a>
+          <img src="./assets/imgaes/facebook-icon.png" alt="facebook-icon">
+          <span>Facebook으로 로그인</span>
         </div>
-
-        <a class="forgot-pw" href="">비밀번호를 잊으셨나요?</a>
+        
+        <a href="" class="forgot-pw">비밀번호를 잊으셨나요?</a>
       </div>
 
       <div class="box join-box">
         <p>
           계정이 없으신가요?
-          <span>가입하기</span>
+          <a href="./join/join.html">가입하기</a>
         </p>
       </div>
 
-      <p class="app-txt">앱을 다운로드하세요.</p>
-
-      <div class="app-down">
-        <a href="">
-          <img src="./assets/images/app-store.png" alt="appstore">
-        </a>
-        
-        <a href="">
-          <img src="./assets/images/gg-play.png" alt="google-play">
-        </a>
+      <div class="app-download">
+        <p>앱을 다운로드하세요.</p>
+        <div class="store-link">
+          <a href="">
+            <img src="./assets/imgaes/app-store.png" alt="app-store-img">
+          </a>
+          <a href="">
+            <img src="./assets/imgaes/gg-play.png" alt="gg-play-img">
+          </a>
+        </div>
       </div>
     </div>
 
     <footer>
-      <ul class="footer-menu-list">
+      <ul class="links">
         <li><a href="">Meta</a></li>
         <li><a href="">소개</a></li>
         <li><a href="">블로그</a></li>
@@ -80,14 +84,14 @@
         <li><a href="">API</a></li>
         <li><a href="">개인정보처리방침</a></li>
         <li><a href="">약관</a></li>
-        <li><a href="">인기 계정</a></li>
-        <li><a id="mode-toggle" href="">Darkmode</a></li>
+        <li><a href="">위치</a></li>
+        <li><a href="">Instagram Lite</a></li>
+        <li><a href="" id="mode-btn">Darkmode</a></li>
       </ul>
-
-      <p class="copyright">© 2024 Instagram from Meta</p>
+      <div class="copyright">© 2024 Instagram from Meta</div>
     </footer>
   </div>
 
-  <script src="./script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
