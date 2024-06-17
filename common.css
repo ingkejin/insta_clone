@@ -1,0 +1,205 @@
+body {
+  background-color: var(--body-bg);
+  color: var(--txt-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 360px;
+  flex-grow: 1;
+}
+
+.box {
+  border: 1px solid var(--box-border-color);
+  background-color: var(--box-bg);
+  border-radius: 5px;
+}
+
+.login-box {
+  padding: 40px;
+}
+
+.logo {
+  width: 175px;
+  height: 50px;
+  margin: 0 auto 40px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.logo-dark {
+  display: none;
+}
+
+/* body한테 dark라는 클래스가 있을 때 .logo-dark */
+body.dark .logo-dark {
+  display: block;
+}
+
+body.dark .logo-light {
+  display: none;
+}
+
+.animate-input {
+  position: relative;
+  height: 36px;
+  margin: 6px 0;
+  border: 1px solid var(--box-border-color);
+  border-radius: 4px;
+}
+
+.animate-input span {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  font-size: 12px;
+  color: var(--txt-second-color);
+  /* 이벤트 제어 : HTML요소에 정의된 클릭을 비활성화 시켜준다. 
+  요소가 포인터 이벤트에 반응 X */
+  pointer-events: none;
+  transition: all 200ms ease-in-out;
+}
+
+.animate-input.active span {
+  font-size: 10px;
+  top: 4px;
+}
+
+.animate-input input {
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+  background-color: var(--box-bg);
+  color: var(--txt-color);
+}
+
+.animate-input.active input {
+  padding: 14px 0 4px 8px;
+}
+
+.animate-input button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+body.dark .animate-input button {
+  color: var(--white);
+}
+
+.animate-input.active button {
+  display: inline;
+}
+
+button[type="submit"]:disabled {
+  cursor: not-allowed;
+  background-color: rgba(0, 149, 246, 0.3);
+}
+
+.or-box {
+  display: flex;
+  align-items: center;
+  margin : 30px 0;
+}
+
+/* odd : 홀수 | even : 짝수 */
+.or-box div:nth-child(odd) {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--box-border-color);
+}
+
+.or-box div:nth-child(even) {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--txt-second-color);
+  margin: 0 18px;
+}
+
+
+.forgot-pw {
+  display: block;
+  font-size: 12px;
+  margin-top: 26px;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.join-box {
+  margin: 10px 0;
+  padding: 22px;
+}
+
+.join-box p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.join-box a {
+  font-weight: 700;
+  color: var(--light-blue);
+}
+
+.app-download p {
+  font-size: 14px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.store-link {
+  display: flex;
+  justify-content: center;
+}
+
+.store-link img {
+  width: 136px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.store-link img:nth-child(1) {
+  margin-right: 8px;
+}
+
+footer {
+  margin-bottom: 30px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 기본값 : nowrap */
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--txt-second-color);
+  font-size: 12px;
+  margin: 0 8px;
+}
+
+.copyright {
+  padding: 20px 0;
+  color: var(--txt-second-color);
+  font-size: 13px;
+  text-align: center;
+}
+
