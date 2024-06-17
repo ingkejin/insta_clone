@@ -1,67 +1,59 @@
 let joinBtn = document.getElementById('join-btn');
-let animateInput = document.querySelectorAll('.animate-input');
+let animateInputs = document.querySelectorAll('.animate-input');
 
 let emailAct = nameAct = idAct = pwAct = false;
 
-let userEmail = document.getElementById('user-email');
-let userName = document.getElementById('user-name');
-let userId = document.getElementById('user-id');
+let userEmail = document.getElementById('user-email'); 
+let userName = document.getElementById('user-name'); 
+let userId = document.getElementById('user-id'); 
 let userPw = document.getElementById('user-pw');
 
-let pwBtn = document.getElementById('pw-btn');
-
-function updateInputState(val, activeVar) {
-  if(val.value.trim().length > 0) {
-    // animate-input 에 active class add
-    val.parentElement.classList.add('active');
-    activeVar = true
+function updateInputState(input, activeVar) {
+  if(input.value.trim().length > 0) {
+    input.parentElement.classList.add("active");
+    activeVar = true;
   } else {
-    // animate-input 에 active class remove
-    val.parentElement.classList.remove('active');
+    input.parentElement.classList.remove("active");
     activeVar = false;
   }
-
   return activeVar;
 }
 
 
-animateInput.forEach((item) => {
+animateInputs.forEach((item) => {
   let input = item.querySelector('input');
-  
+
   input.addEventListener('keyup', () => {
     if(input == userEmail) {
       emailAct = updateInputState(input, emailAct);
-    } else if(input == userName) {
+    } else if (input == userName) {
       nameAct = updateInputState(input, nameAct);
     } else if(input == userId) {
-      idAct = updateInputState(input, idAct); 
+      idAct = updateInputState(input, idAct);
     } else if(input == userPw) {
-      pwAct = updateInputState(input, pwAct);
+      pwAct = updateInputState(input, pwAct);;
     }
 
-    let allTrue = emailAct && nameAct && idAct && pwAct;
-    if(allTrue) {
-      // allTrue 안 값이 모두 참일 때 
-      // joinBtn disabled 속성 remove
-      joinBtn.removeAttribute('disabled');
-      // j-Query에서는 .attr('disabled', true / false) 사용 가능
-      // vanilla JS에서는 속성 제거할 때 flase X | removeAttribute() 사용!
-      // joinBtn.setAttribute('disabled', false);
+    if(emailAct && nameAct && idAct && pwAct) {
+      joinBtn.removeAttribute("disabled");
     } else {
-      joinBtn.setAttribute('disabled', true);
+      joinBtn.setAttribute("disabled", true);
     }
   })
-})
+});
 
 
-function modeToggle() {
-  // 삼항연산자
-  // 조건 ? true : false
-  let pwType = userPw.getAttribute('type') == 'password';
-  // userPw type : password => text | pwBtn.innerHTML = '숨기기'
-  userPw.setAttribute('type', pwType ? 'text' : 'password');
-  // userPw type : text => password | pwBtn.innerHTML = '비밀번호 표시'
-  pwBtn.innerHTML = pwType ? '숨기기' : '비밀번호 표시';
+let pwInput = document.getElementById('user-pw');
+let pwBtn = document.getElementById('pw-btn');
+
+function pwToggle() {
+  let pwVisible = pwInput.getAttribute("type") === "text";
+
+  pwInput.setAttribute("type", pwVisible ? "password" : "text");
+  pwBtn.innerHTML = pwVisible ? "비밀번호 표시" : "숨기기";
 }
 
-pwBtn.addEventListener('click', modeToggle);
+pwBtn.addEventListener('click', pwToggle);
+
+
+
