@@ -11,6 +11,12 @@ function popupClose(item) {
   item.classList.remove('active');
 }
 
+
+// popupOpen 함수 매개변수 X
+// 매개변수가 없을 경우 => click 이벤트가 발생했을 때 해당 함수 호출
+// postAddBtn.addEventListener('click', popupOpen);
+
+// 매개변수가 있을 경우 => () => { popupOpen(매개변수) }
 postAddBtn.addEventListener('click', () => {popupOpen(uploadPopup)});
 postCloseBtn.addEventListener('click', () => {popupClose(uploadPopup)});
 
@@ -18,6 +24,7 @@ postCloseBtn.addEventListener('click', () => {popupClose(uploadPopup)});
 // Option Btn
 let optionPopup = document.querySelector('.more-option');
 let optionBtn = document.querySelectorAll('.option-btn');
+console.log(optionBtn)
 let optionCloseBtn = document.querySelector('.option-close-btn');
 
 optionBtn.forEach((btn) => {
